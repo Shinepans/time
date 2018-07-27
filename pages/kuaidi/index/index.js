@@ -1,5 +1,6 @@
 const kuaidiID = [
-  "shentong", "ems", "shunfeng", "yuantong", "zhongtong", "yunda", "tiantian", "huitongkuaidi", "quanfengkuaidi", "debangwuliu", "zhaijisong"]
+  "shentong", "ems", "shunfeng", "yuantong", "zhongtong", "yunda", "tiantian", "huitongkuaidi", "quanfengkuaidi", "debangwuliu", "zhaijisong"
+]
 
 // pages/kuaidi/index/index.js
 Page({
@@ -11,87 +12,94 @@ Page({
     data: [],
     index: 0,
     danhao: '',
+    logs: [],
     kuaidi: [
-      "申通","EMS","顺丰","圆通","中通","韵达","天天","汇通" ,"全峰","德邦","宅急送"]
+      "申通", "EMS", "顺丰", "圆通", "中通", "韵达", "天天", "汇通", "全峰", "德邦", "宅急送"
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var logs = wx.getStorageSync('kuaidi_logs') || []
+    this.setData({
+      logs: logs
+    })
     console.log(logs)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   },
 
-  inputNumber: function (e) {
+  inputNumber: function(e) {
     this.setData({
       danhao: e.detail.value
     })
   },
 
-  changeKuaidi: function (e) {
+  changeKuaidi: function(e) {
     this.setData({
       index: e.detail.value
     })
   },
 
-  startFind: function (e) {
-    var logs = wx.getStorageSync('kuaidi_logs') || []
-    logs.unshift({
-      danhao: this.data.danhao,
-      kuaidi: kuaidiID[this.data.index],
-      name: this.data.kuaidi[this.data.index]
-    })
-    wx.setStorageSync('kuaidi_logs', logs)
+  startFind: function(e) {
+    if (this.data.danhao !== '') {
+      var logs = wx.getStorageSync('kuaidi_logs') || []
+      logs.unshift({
+        danhao: this.data.danhao,
+        kuaidi: kuaidiID[this.data.index],
+        name: this.data.kuaidi[this.data.index]
+      })
+      wx.setStorageSync('kuaidi_logs', logs)
+    }
     wx.redirectTo({
       url: '../logs/logs?name=' + kuaidiID[this.data.index] + '&id=' + this.data.danhao,
     })

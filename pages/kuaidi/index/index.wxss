@@ -41,3 +41,17 @@
 	border-radius: 2px;
   width: 100%;
 }
+
+.latest {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.log_item {
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  color: #03a9f4;
+}

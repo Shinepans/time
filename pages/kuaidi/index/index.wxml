@@ -14,11 +14,14 @@
   <input bindinput="inputNumber" placeholder="输入您要查询的单号" auto-focus/>
 </view>
 
-<view class="find">
-		<button bindtap="startFind" class="find_btn" size="mini" >查询</button>
+<view class='latest'>
+  最近单号：
 </view>
 
-<view class="log_item" wx:for="{{data}}" wx:for-index="$index" wx:for-item="log">
-	  		<text class="log_action">{{data.context}}</text>
-        <view class='divide'></view>
-	  	</view>
+<view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log">
+  <text class="log_action">{{log.name}}|{{log.danhao}}</text>
+</view>
+
+<view class="find">
+  <button bindtap="startFind" class="find_btn" size="mini">查询</button>
+</view>
