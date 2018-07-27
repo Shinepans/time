@@ -19,7 +19,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var logs = wx.getStorageSync('kuaidi_logs') || []
+    console.log(logs)
   },
 
   /**
@@ -84,7 +85,13 @@ Page({
   },
 
   startFind: function (e) {
-    
+    var logs = wx.getStorageSync('kuaidi_logs') || []
+    logs.unshift({
+      danhao: this.data.danhao,
+      kuaidi: kuaidiID[this.data.index],
+      name: this.data.kuaidi[this.data.index]
+    })
+    wx.setStorageSync('kuaidi_logs', logs)
     wx.redirectTo({
       url: '../logs/logs?name=' + kuaidiID[this.data.index] + '&id=' + this.data.danhao,
     })
