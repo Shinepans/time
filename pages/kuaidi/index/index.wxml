@@ -1,5 +1,6 @@
 <view class="section">
   <view class="section__title">选择要查询的快递：</view>
+  <image style="margin-top:1rem;height:64px;width:64px;" src="http://7xq5e8.com1.z0.glb.clouddn.com/beans/kuaidi.png"></image>
   <view class='picker_panel'>
     <picker bindchange="changeKuaidi" value="{{index}}" range="{{kuaidi}}">
       <view class="picker">
@@ -8,3 +9,16 @@
     </picker>
   </view>
 </view>
+
+<view class="section_input">
+  <input bindinput="inputNumber" placeholder="输入您要查询的单号" auto-focus/>
+</view>
+
+<view class="find">
+		<button bindtap="startFind" class="find_btn" size="mini" >查询</button>
+</view>
+
+<view class="log_item" wx:for="{{data}}" wx:for-index="$index" wx:for-item="log">
+	  		<text class="log_action">{{data.context}}</text>
+        <view class='divide'></view>
+	  	</view>

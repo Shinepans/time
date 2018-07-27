@@ -1,18 +1,31 @@
-// pages/kuaidi.js
+// pages/kuaidi/logs/logs.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    name: '',
+    id: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (option) {
+    this.setData({
+      name: option.name,
+      id: option.id
+    })
+    let reqUrl = 'https://www.kuaidi100.com/query?type=' + option.name + '&postid=' + option.id
+    let that = this
+    wx.request({
+      url: reqUrl,
+      success: function (res) {
+        console.log(res.data)
+        that.setData({ data: res.data })
+      }
+    })
   },
 
   /**
@@ -62,5 +75,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  moreData: function () {
+    wx.redirectTo({
+      url: '../../kuaidi/index/index',
+    })
   }
 })

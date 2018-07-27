@@ -1,0 +1,24 @@
+<block wx:if="{{data.data.length}}">
+	<scroll-view class="container" scroll-y="true">
+	  <view class="log panel">
+	  	<view class="log_item" wx:for="{{data.data}}" wx:for-index="$index" wx:for-item="log">
+      <view class='time_row'>
+        <view class='dot_time' style="background-color: {{$index == 0 ? '#ff7800':'#828282'}}"></view>
+        <view class='time_text' style="color: {{$index == 0 ? '#ff7800':'#828282'}}">{{log.time}}</view>
+      </view>
+	  		<text class="log_action" style="color: {{$index == 0 ? '#ff7800':'#828282'}}">{{log.context}}</text>
+        <view class='divide'></view>
+	  	</view>
+	  </view>
+		
+	</scroll-view>
+	<view class="more">
+		<button bindtap="moreData" class="more_btn" size="mini" >继续查询</button>
+	</view>
+</block>
+<block wx:else>
+	<view class="nodata">
+		<image class="nodata_img" src="../image/nodata.png"></image>
+		<text class="nodata_text">{{data.message}}</text>
+	</view>
+</block>

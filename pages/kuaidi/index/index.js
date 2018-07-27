@@ -10,6 +10,7 @@ Page({
   data: {
     data: [],
     index: 0,
+    danhao: '',
     kuaidi: [
       "申通","EMS","顺丰","圆通","中通","韵达","天天","汇通" ,"全峰","德邦","宅急送"]
   },
@@ -70,21 +71,22 @@ Page({
   
   },
 
+  inputNumber: function (e) {
+    this.setData({
+      danhao: e.detail.value
+    })
+  },
+
   changeKuaidi: function (e) {
-    console.log(e.detail.value)
     this.setData({
       index: e.detail.value
     })
   },
 
-  findKuaidi: function () {
-    let that = this
-    let reqUrl = ''
-    wx.request({
-      url: reqUrl,
-      success: function (res) {
-        this.setData({data: res.data})
-      }
+  startFind: function (e) {
+    
+    wx.redirectTo({
+      url: '../logs/logs?name=' + kuaidiID[this.data.index] + '&id=' + this.data.danhao,
     })
   }
 })

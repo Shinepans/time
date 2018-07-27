@@ -9,9 +9,35 @@
   margin-top: 1rem;
   background-color: #03a9f4;
   color: #fff;
-  width: 90%;
-  padding: 1rem 0.5rem;
+  width: 50%;
+  padding: 0.5rem 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section_input {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.find .find_btn {
+  margin-top: 3rem;
+	height: 35px;
+	line-height: 35px;
+	color:#fff;
+	background-color: #03a9f4;
+	border-radius: 2px;
+  width: 100%;
 }
