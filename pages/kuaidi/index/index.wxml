@@ -1,0 +1,10 @@
+<view class="section">
+  <view class="section__title">选择要查询的快递：</view>
+  <view class='picker_panel'>
+    <picker bindchange="changeKuaidi" value="{{index}}" range="{{kuaidi}}">
+      <view class="picker">
+        选择快递：{{kuaidi[index]}}
+      </view>
+    </picker>
+  </view>
+</view>

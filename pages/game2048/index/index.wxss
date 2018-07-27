@@ -1,0 +1,25 @@
+/**index.wxss**/
+.more{
+  /*浅灰色*/
+	color: #aaa;
+	font-size: 14px;
+	position:fixed;
+	bottom: 20px;
+}
+
+.game2048_main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamelist {
+  height: 3em;
+  width: 6em;
+  background-color: #03a9f4 !important;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

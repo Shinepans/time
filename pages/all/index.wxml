@@ -1,0 +1,15 @@
+<view class='list'>
+  <button class='button-area1' type="primary" bindtap="toTimeTool"> 任务时钟</button>
+  <button class='button-area1' type="primary" bindtap="toCalendar"> 码农日历</button>
+  <button class='button-area1' type="primary" bindtap="toGame2048"> 2048 Game</button>
+</view>
+<view class='list'>
+  <button class='button-area1' type="primary" bindtap="toTodos">便签 Todos</button>
+  <button class='button-area1' type="primary" bindtap="toMine">扫雷Game</button>
+  <button class='button-area1' type="primary" bindtap="toBird">Flappy Bird</button>
+  <!-- <button class='button-area1' type="primary" bindtap="toJoy"> 开心一刻</button> -->
+</view>
+<view class='list'>
+  <button class='button-area1' type="primary" bindtap="toJoy">开心一笑</button>
+  <button class='button-area1' type="primary" bindtap="toKuaidi">快递查询</button>
+</view>

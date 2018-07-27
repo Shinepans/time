@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="game2048_main">
+	<view wx:for-items="{{gameList}}" wx:for-index="idx" wx:key="idx" class="usermotto">
+	    <button class='gamelist' type="primary" disabled="{{disabled}}" bindtap="start{{item}}"> {{item}} </button>
+	</view>
+	<text class="more">shinepans</text>
+</view>

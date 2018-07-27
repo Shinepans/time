@@ -1,0 +1,67 @@
+/* pages/historyTody/index.wxss */
+.switchView {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item1 {
+  display: flex;
+  color: #03a9f4;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.item2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #03a9f4;
+  flex: 1;
+}
+
+.container{
+	padding-bottom: 50px;
+	max-height: 92%;
+}
+.log {
+	color: #999;
+	margin: 15px 10px;
+}
+.log_item{
+	padding: 15px 5px;
+}
+.log_item text {
+	padding-right: 20px;
+}
+.more{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+  text-align: center;
+}
+.more .more_btn {
+	margin: 10px;
+	height: 35px;
+	line-height: 35px;
+	color:#fff;
+	background-color: #03a9f4;
+	border-radius: 2px;
+  width: 80%;
+}
+
+.divide {
+  width: 100%;
+  height: 1rem;
+  border-bottom: solid 1px #03a9f4;
+}

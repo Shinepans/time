@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/all/index",
+    "pages/time/index/index",
+    "pages/time/logs/logs",
+    "pages/time/setting/setting",
+    "pages/calendar/index/index",
+    "pages/calendar/logs/logs",
+    "pages/game2048/index/index",
+    "pages/game2048/logs/logs",
+    "pages/game2048/2048/2048",
+    "pages/todos/index/index",
+    "pages/todos/logs/logs",
+    "pages/mine/index/index",
+    "pages/bird/index/index",
+    "pages/bird/list/index",
+    "pages/joy/index/index",
+    "pages/kuaidi/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3197ed",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/time/index/index",
+        "iconPath": "pages/time/image/time.png",
+        "selectedIconPath": "pages/time/image/timeHL.png",
+        "text": "任务"
+      },
+      {
+        "pagePath": "pages/time/logs/logs",
+        "iconPath": "pages/time/image/logs.png",
+        "selectedIconPath": "pages/time/image/logsHL.png",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/time/setting/setting",
+        "iconPath": "pages/time/image/settings.png",
+        "selectedIconPath": "pages/time/image/settingsHL.png",
+        "text": "设置"
+      }
+    ]
+  },
+  "netWorkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

@@ -1,0 +1,17 @@
+/* pages/kuaidi/index/index.wxss */
+.section__title {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.picker_panel {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  background-color: #03a9f4;
+  color: #fff;
+  width: 90%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
