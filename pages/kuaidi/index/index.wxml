@@ -18,10 +18,15 @@
   最近单号：
 </view>
 
-<view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log">
-  <text class="log_action">{{log.name}}|{{log.danhao}}</text>
+<view class="log_item">
+  <view class='log_one' wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log">
+    <view bindtap='logTap' data-kuaidi="{{log.kuaidi}}" data-danhao="{{log.danhao}}" class="log_action">{{log.name}}|{{log.danhao}}</view>
+  </view>
 </view>
 
 <view class="find">
   <button bindtap="startFind" class="find_btn" size="mini">查询</button>
+</view>
+<view class="clear">
+  <button bindtap="clearLogs" class="clear_btn" size="mini">清空记录</button>
 </view>

@@ -114,8 +114,8 @@ Page({
     var logs = this.data.logs
     logs.push({
       timestamp: new Date(),
-      action: 'Clear',
-      name: 'Completed todo'
+      action: '清除',
+      name: '清除todos'
     })
     this.setData({ todos: remains, logs: logs })
     this.save()

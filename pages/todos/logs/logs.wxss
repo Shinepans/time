@@ -23,12 +23,12 @@
 .name {
   display: inline-block;
   width: 70%;
-  color: #aa0;
+  color: #333;
 }
 
 .action {
   display: inline-block;
   width: 30%;
-  color: #f40;
+  color: #888;
   text-align: right;
 }

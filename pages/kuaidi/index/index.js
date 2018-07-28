@@ -90,9 +90,17 @@ Page({
     })
   },
 
+  clearLogs: function (e) {
+    wx.setStorageSync('kuaidi_logs', [])
+    wx.showToast({
+      title: '成功',
+    })
+    this.setData({logs: []})
+  },
+
   startFind: function(e) {
     if (this.data.danhao !== '') {
-      var logs = wx.getStorageSync('kuaidi_logs') || []
+      let logs = wx.getStorageSync('kuaidi_logs') || []
       logs.unshift({
         danhao: this.data.danhao,
         kuaidi: kuaidiID[this.data.index],
@@ -102,6 +110,16 @@ Page({
     }
     wx.redirectTo({
       url: '../logs/logs?name=' + kuaidiID[this.data.index] + '&id=' + this.data.danhao,
+    })
+  },
+
+  logTap: function (e) {
+    let danhao = e.target.dataset.danhao
+    let kuaidi = e.target.dataset.kuaidi
+    console.log(danhao)
+    console.log(e.target)
+    wx.redirectTo({
+      url: '../logs/logs?name=' + kuaidi + '&id=' + danhao,
     })
   }
 })

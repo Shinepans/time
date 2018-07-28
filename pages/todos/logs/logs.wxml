@@ -1,8 +1,10 @@
 <view class="container">
   <view class="logs" wx:if="{{ logs.length }}">
     <view class="item" wx:for="{{ logs }}" wx:key="{{ index }}">
-      <text class="name">Name: {{ item.name }}</text>
-      <text class="action">{{ item.action }}</text>
+      <text class="name">{{ item.name }}</text>
+      <text 
+      class="action" 
+      style="color:{{item.action == '清除' ? '#f44336' : item.action == '完成' ? '#4caf50' : item.action == '新建' ? '#2196f3' : '#eee'}}">{{ item.action }}todos</text>
       <text class="timestamp">[{{ item.timestamp }}]</text>
     </view>
   </view>
