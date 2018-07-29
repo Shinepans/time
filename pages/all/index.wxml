@@ -11,5 +11,6 @@
 </view>
 <view class='list'>
   <button class='button-area1' type="primary" bindtap="toJoy">开心一笑</button>
+  <button class='button-area1' type="primary" bindtap="toRed">红包红包</button>
   <button class='button-area1' type="primary" bindtap="toKuaidi">快递查询</button>
 </view>

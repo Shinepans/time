@@ -1,0 +1,29 @@
+.section__title {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.picker_panel {
+  margin-top: 1rem;
+  background-color: #d81e06;
+  color: #fff;
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.redView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

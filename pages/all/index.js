@@ -25,6 +25,9 @@ var pageObject = {
   },
   toKuaidi: function (e) {
     wx.navigateTo({ url: "../kuaidi/index/index" })
+  },
+  toRed: function (e) {
+    wx.navigateTo({url: '../red/red'})
   }
 }
 

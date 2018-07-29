@@ -1,0 +1,15 @@
+<view class="section">
+  <view class="section__title">选择一个：</view>
+  <image style="margin-top:1rem;height:64px;width:64px;" src="http://7xq5e8.com1.z0.glb.clouddn.com/beans/red/%E7%BA%A2%E5%8C%85.png"></image>
+  <view class='picker_panel'>
+    <picker bindchange="changeFunc" value="{{index}}" range="{{funcs}}">
+      <view class="picker">
+        选择一个：{{funcs[index]}}
+      </view>
+    </picker>
+  </view>
+</view>
+
+<view class='redView'>
+  <image style="margin-top:1rem;height:426px;width:283.5px;border-radius:20px" src="{{funcsUrl[index]}}"></image>
+</view>

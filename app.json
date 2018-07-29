@@ -16,7 +16,8 @@
     "pages/bird/list/index",
     "pages/joy/index/index",
     "pages/kuaidi/index/index",
-    "pages/kuaidi/logs/logs"
+    "pages/kuaidi/logs/logs",
+    "pages/red/red"
   ],
   "window": {
     "backgroundTextStyle": "light",
