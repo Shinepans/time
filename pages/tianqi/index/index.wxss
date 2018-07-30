@@ -1,1 +1,94 @@
-/* pages/tianqi/index/index.wxss */
+.main_content {
+  width: 100%;
+  font-size: 0.7rem;
+  color: #fff;
+  background-color: #3197ED;
+}
+
+.city_name {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_content {
+  padding-bottom: 1rem;
+  background-color: #3197ED;
+}
+
+.date_week {
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather_icon {
+  display: flex;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 4rem;
+  flex-direction: row;
+}
+
+.weather_text {
+  margin-left: 1rem;
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.wind_text {
+  font-size: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.temp_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.iqa_text {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1rem;
+  font-size: 0.6rem;
+}
+
+.hourly_text {
+  font-size: 1rem;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.bottom_content {
+  background-color: #fff;
+  color: #111;
+}
+
+.time_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.time_text {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

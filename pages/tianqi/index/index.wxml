@@ -1,57 +1,29 @@
-<view>
-  您所在的城市： {{city}}
-</view>
-
-<view>
-  今天是
-  <text>{{data.date}}</text>
-  <text>{{data.week}}</text>
-</view>
-
-<view>
-  今天
-  <text>{{data.weather}},</text>
-  <text>刮{{data.windpower}}{{data.winddirect}},风速</text>
-  <text>{{data.windspeed}}</text>
-</view>
-
-<view>
-  气温：
-  <text>{{data.temp}}</text>, 气温区间: {{data.templow}}-{{data.temphigh}}
-</view>
-
-<view>
-  气压强度： {{data.pressure}}
-</view>
-
-<view>
-  空气湿度 {{data.humidity}}
-</view>
-
-<view>
-  空气质量指数 {{data.aqi.aqi}}
-</view>
-
-<view>
-  {{data.aqi.aqiinfo.affect}},
-</view>
-
-<view>
-  空气质量级别为: {{data.aqi.level}}
-</view>
-
-<view>
-  空气质量建议： {{data.aqi.measure}}
-</view>
-
-24小时预报：
-
-<view class="log panel">
-  <view class="log_item" wx:for="{{data.hourly}}" wx:for-index="$index" wx:for-item="log">
-    <view class='time_row'>
-      <view class='time_text'>时间：{{log.time}}</view>
-      <view class='time_text'>天气：{{log.weather}}</view>
-      <view class='time_text'>气温：{{log.temp}}</view>
+<view class='main_content'>
+  <view class='top_content'>
+    <view class='city_name'>{{city}}</view>
+    <view class='date_week'>今天是{{data.date}},{{data.week}}</view>
+    <view class='weather_icon'>
+      <image style="height:61px;width:69px;" src="{{'../icon/' + data.img + '.png'}}"></image>
+      <view class="weather_text">
+        <view>{{data.weather}}</view>
+        <view class="wind_text">{{data.winddirect}}{{data.windpower}},风速{{data.windspeed}}</view>
+      </view>
+    </view>
+    <view class='temp_text'>{{data.temp}}°</view>
+    <view class='iqa_text'>
+      湿度: {{data.humidity}} Pm2.5: {{data.aqi.ipm2_5}} {{data.aqi.quality}}
     </view>
   </view>
+
+  <view class='bottom_content'>
+    <view class='hourly_text'>24小时预报</view>
+    <view class="log_item" wx:for="{{data.hourly}}" wx:for-index="$index" wx:for-item="log">
+      <view class='time_row'>
+        <view class='time_text'>时间：{{log.time}}</view>
+        <view class='time_text'>天气：{{log.weather}}</view>
+        <view class='time_text'>气温：{{log.temp}}</view>
+      </view>
+    </view>
+  </view>
+
 </view>
