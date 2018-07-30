@@ -10,7 +10,8 @@ Page({
     speed: '',
     accuracy: '',
     city: '',
-    data: ''
+    data: '',
+    index_icon: ['../icon2/kongtiao.png', '../icon2/yundong.png', '../icon2/ziwaixian.png', '../icon2/ganmao.png', '../icon2/xiche.png', '../icon2/wuran.png', '../icon2/chuanyi.png']
   },
 
   /**

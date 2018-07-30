@@ -75,7 +75,7 @@
 }
 
 .bottom_content {
-  background-color: #fff;
+  background-color: #faf9fa;
   color: #111;
 }
 
@@ -84,6 +84,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  height: 3rem;
+  background-color: #fff;
+  margin-top: 0.6rem;
 }
 
 .time_text {
@@ -92,3 +95,15 @@
   align-items: center;
   display: flex;
 }
+
+.index_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 3rem;
+  background-color: #3197ED;
+  color: #fff;
+  margin-top: 0.6rem;
+}
+

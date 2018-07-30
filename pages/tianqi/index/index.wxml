@@ -16,12 +16,27 @@
   </view>
 
   <view class='bottom_content'>
-    <view class='hourly_text'>24小时预报</view>
+    <view class='hourly_text'>未来24小时预报</view>
     <view class="log_item" wx:for="{{data.hourly}}" wx:for-index="$index" wx:for-item="log">
       <view class='time_row'>
-        <view class='time_text'>时间：{{log.time}}</view>
-        <view class='time_text'>天气：{{log.weather}}</view>
-        <view class='time_text'>气温：{{log.temp}}</view>
+        <view class='time_text'>{{log.time}}</view>
+        <view class='time_text' style="justify-content:flex-end;margin-right:1rem;">
+          <image style="width:27.6px;height:24.4px;" src="{{'../icon/' + log.img + '.png'}}"></image>
+        </view>
+        <view class='time_text' style="justify-content:flex-start;">{{log.weather}}</view>
+        <view class='time_text'>{{log.temp}}°</view>
+      </view>
+    </view>
+
+    <view class='hourly_text'>生活指数</view>
+    <view class="log_item" wx:for="{{data.index}}" wx:for-index="$idx" wx:for-item="log">
+      <view class='index_row'>
+        <view>{{idx.toString()}}</view>
+        <view class='index_text' style="justify-content:flex-start;">
+          <image style="width:27.6px;height:24.4px;" src="{{index_icon[idx]}}"></image>
+        </view>
+        <view class='index_text'>{{log.iname}}</view>
+        <view class='index_text'>{{log.ivalue}}</view>
       </view>
     </view>
   </view>
