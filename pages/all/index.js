@@ -28,6 +28,11 @@ var pageObject = {
   },
   toRed: function (e) {
     wx.navigateTo({url: '../red/red'})
+  },
+  toTianqi: function (e) {
+    wx.navigateTo({
+      url: '../tianqi/index/index',
+    })
   }
 }
 

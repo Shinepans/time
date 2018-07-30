@@ -17,7 +17,8 @@
     "pages/joy/index/index",
     "pages/kuaidi/index/index",
     "pages/kuaidi/logs/logs",
-    "pages/red/red"
+    "pages/red/red",
+    "pages/tianqi/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

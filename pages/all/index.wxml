@@ -4,13 +4,16 @@
   <button class='button-area1' type="primary" bindtap="toGame2048"> 滑动手指</button>
 </view>
 <view class='list'>
-  <button class='button-area1' type="primary" bindtap="toTodos">便签 Todos</button>
+  <button class='button-area1' type="primary" bindtap="toTodos">豆子待办</button>
   <button class='button-area1' type="primary" bindtap="toMine">Mine Mine</button>
   <button class='button-area1' type="primary" bindtap="toBird">飞飞 飞飞</button>
   <!-- <button class='button-area1' type="primary" bindtap="toJoy"> 开心一刻</button> -->
 </view>
 <view class='list'>
   <button class='button-area1' type="primary" bindtap="toJoy">开心一笑</button>
-  <button class='button-area1' type="primary" bindtap="toRed">红包红包</button>
+  <button class='button-area1' type="primary" bindtap="toRed">豆子红包</button>
   <button class='button-area1' type="primary" bindtap="toKuaidi">快递查询</button>
+</view>
+<view class='list'>
+  <button class='button-area1' type="primary" bindtap="toTianqi">豆子气候</button>
 </view>
