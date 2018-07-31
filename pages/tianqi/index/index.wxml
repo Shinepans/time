@@ -29,14 +29,20 @@
     </view>
 
     <view class='hourly_text'>生活指数</view>
-    <view class="log_item" wx:for="{{data.index}}" wx:for-index="$idx" wx:for-item="log">
+    <view class="log_item" wx:for="{{data.index}}" wx:for-item="log">
       <view class='index_row'>
-        <view>{{idx.toString()}}</view>
-        <view class='index_text' style="justify-content:flex-start;">
-          <image style="width:27.6px;height:24.4px;" src="{{index_icon[idx]}}"></image>
+        <view class='row_item'>
+          <view class='index_text'>
+            <image style="width:32px;height:32px;margin-top:-0.3rem;" src="{{index_icon[index]}}"></image>
+          </view>
+          <view class='index_text' style="justify-content:flex-start">{{log.iname}}</view>
+          <view class='index_text'>{{log.ivalue}}</view>
         </view>
-        <view class='index_text'>{{log.iname}}</view>
-        <view class='index_text'>{{log.ivalue}}</view>
+        <view class='divider'>
+        </view>
+        <view class='aqi_info'>
+          {{log.detail}}
+        </view>
       </view>
     </view>
   </view>

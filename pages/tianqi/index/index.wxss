@@ -1,6 +1,6 @@
 .main_content {
   width: 100%;
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: #fff;
   background-color: #3197ED;
 }
@@ -19,7 +19,7 @@
 
 .date_week {
   margin-top: 1rem;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
 }
 
 .wind_text {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   margin-top: 0.6rem;
 }
 
@@ -62,7 +62,7 @@
   justify-content: center;
   align-items: center;
   height: 1rem;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
 .hourly_text {
@@ -97,13 +97,38 @@
 }
 
 .index_row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 3rem;
+  height: 8rem;
   background-color: #3197ED;
   color: #fff;
   margin-top: 0.6rem;
+  padding-bottom: 0.6rem;
 }
 
+.row_item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.index_text {
+  flex: 1;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.divider {
+  height: 1px;
+  border-bottom: solid 1px #fff;
+  margin-top: 0.5rem;
+}
+
+.aqi_info {
+  font-size: 0.7rem;
+  color: #fff;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}

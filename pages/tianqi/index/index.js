@@ -11,7 +11,14 @@ Page({
     accuracy: '',
     city: '',
     data: '',
-    index_icon: ['../icon2/kongtiao.png', '../icon2/yundong.png', '../icon2/ziwaixian.png', '../icon2/ganmao.png', '../icon2/xiche.png', '../icon2/wuran.png', '../icon2/chuanyi.png']
+    index_icon: [
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/kongtiao.png', 
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/yundong.png', 
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/ziwaixian.png', 
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/ganmao.png', 
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/xiche.png', 
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/wuran.png', 
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/chuanyi.png']
   },
 
   /**
