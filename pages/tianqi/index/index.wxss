@@ -48,6 +48,11 @@
   margin-top: 0.6rem;
 }
 
+.temp_range_text {
+  margin-left:0.2rem;
+  font-size:0.6rem;
+}
+
 .temp_text {
   display: flex;
   justify-content: center;
@@ -62,7 +67,17 @@
   justify-content: center;
   align-items: center;
   height: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+}
+
+.pm2_5 {
+  margin-left: 0.5rem;
+}
+
+.air_quality {
+  margin-left: 0.5rem;
+  padding: 0.15rem 1rem;
+  border-radius: 10%;
 }
 
 .hourly_text {

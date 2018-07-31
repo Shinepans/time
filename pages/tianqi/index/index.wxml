@@ -5,13 +5,15 @@
     <view class='weather_icon'>
       <image style="height:61px;width:69px;" src="{{'../icon/' + data.img + '.png'}}"></image>
       <view class="weather_text">
-        <view>{{data.weather}}</view>
+        <view>{{data.weather}}<text class='temp_range_text'>{{data.templow}}~{{data.temphigh}}°C</text></view>
         <view class="wind_text">{{data.winddirect}}{{data.windpower}},风速{{data.windspeed}}</view>
       </view>
     </view>
     <view class='temp_text'>{{data.temp}}°</view>
     <view class='iqa_text'>
-      湿度: {{data.humidity}} Pm2.5: {{data.aqi.ipm2_5}} {{data.aqi.quality}}
+      <text>湿度: {{data.humidity}}</text> 
+      <text class='pm2_5'>PM2.5: {{data.aqi.ipm2_5}}</text> 
+      <text class='air_quality' style="background-color: {{data.aqi.aqi > 300 ? '#f44336' : data.aqi.aqi > 200 ? '#673ab7' : data.aqi.aqi > 100 ? '#ff5722' : data.aqi.aqi > 50 ? '#4caf50' : data.aqi.aqi > 0 ? '#2196f3' : '#000'}};">{{data.aqi.quality}}</text>
     </view>
   </view>
 
