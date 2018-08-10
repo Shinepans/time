@@ -147,3 +147,17 @@
   padding-left: 1rem;
   padding-top: 1rem;
 }
+
+
+/*Loading Part---------------------------------------------------*/
+.picker_panel {
+  margin-top: 1rem;
+  background-color: rgba(13, 240, 32, 0.644);
+  color: #fff;
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

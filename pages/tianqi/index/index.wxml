@@ -1,52 +1,66 @@
-<view class='main_content'>
-  <view class='top_content'>
-    <view class='city_name'>{{city}}</view>
-    <view class='date_week'>今天是{{data.date}},{{data.week}}</view>
-    <view class='weather_icon'>
-      <image style="height:61px;width:69px;" src="{{'../icon/' + data.img + '.png'}}"></image>
-      <view class="weather_text">
-        <view>{{data.weather}}<text class='temp_range_text'>{{data.templow}}~{{data.temphigh}}°C</text></view>
-        <view class="wind_text">{{data.winddirect}}{{data.windpower}},风速{{data.windspeed}}</view>
+<view wx:if="{{ display == 'chose_city' }}">
+  <view class='picker_panel'>
+    <picker bindchange="changeFunc" value="{{index}}" range="{{funcs}}">
+      <view class="picker">
+        选择地区：{{funcs[index]}}
       </view>
-    </view>
-    <view class='temp_text'>{{data.temp}}°</view>
-    <view class='iqa_text'>
-      <text>湿度: {{data.humidity}}</text> 
-      <text class='pm2_5'>PM2.5: {{data.aqi.ipm2_5}}</text> 
-      <text class='air_quality' style="background-color: {{data.aqi.aqi > 300 ? '#f44336' : data.aqi.aqi > 200 ? '#673ab7' : data.aqi.aqi > 100 ? '#ff5722' : data.aqi.aqi > 50 ? '#4caf50' : data.aqi.aqi > 0 ? '#2196f3' : '#000'}};">{{data.aqi.quality}}</text>
-    </view>
+    </picker>
   </view>
+</view>
 
-  <view class='bottom_content'>
-    <view class='hourly_text'>未来24小时预报</view>
-    <view class="log_item" wx:for="{{data.hourly}}" wx:for-index="$index" wx:for-item="log">
-      <view class='time_row'>
-        <view class='time_text'>{{log.time}}</view>
-        <view class='time_text' style="justify-content:flex-end;margin-right:1rem;">
-          <image style="width:27.6px;height:24.4px;" src="{{'../icon/' + log.img + '.png'}}"></image>
-        </view>
-        <view class='time_text' style="justify-content:flex-start;">{{log.weather}}</view>
-        <view class='time_text'>{{log.temp}}°</view>
-      </view>
-    </view>
-
-    <view class='hourly_text'>生活指数</view>
-    <view class="log_item" wx:for="{{data.index}}" wx:for-item="log">
-      <view class='index_row'>
-        <view class='row_item'>
-          <view class='index_text'>
-            <image style="width:32px;height:32px;margin-top:-0.3rem;" src="{{index_icon[index]}}"></image>
+<view wx:if="{{display == 'index'}}">
+  <view class='main_content'>
+    <view class='top_content'>
+      <view class='city_name' bindtap='choseNewCity'>{{city}}</view>
+      <view class='date_week'>今天是{{data.date}},{{data.week}}</view>
+      <view class='weather_icon'>
+        <image style="height:61px;width:69px;" src="{{'../icon/' + data.img + '.png'}}"></image>
+        <view class="weather_text">
+          <view>{{data.weather}}
+            <text class='temp_range_text'>{{data.templow}}~{{data.temphigh}}°C</text>
           </view>
-          <view class='index_text' style="justify-content:flex-start">{{log.iname}}</view>
-          <view class='index_text'>{{log.ivalue}}</view>
+          <view class="wind_text">{{data.winddirect}}{{data.windpower}},风速{{data.windspeed}}</view>
         </view>
-        <view class='divider'>
+      </view>
+      <view class='temp_text'>{{data.temp}}°</view>
+      <view class='iqa_text'>
+        <text>湿度: {{data.humidity}}</text>
+        <text class='pm2_5'>PM2.5: {{data.aqi.ipm2_5}}</text>
+        <text class='air_quality' style="background-color: {{data.aqi.aqi > 300 ? '#f44336' : data.aqi.aqi > 200 ? '#673ab7' : data.aqi.aqi > 100 ? '#ff5722' : data.aqi.aqi > 50 ? '#4caf50' : data.aqi.aqi > 0 ? '#2196f3' : '#000'}};">{{data.aqi.quality}}</text>
+      </view>
+    </view>
+
+    <view class='bottom_content'>
+      <view class='hourly_text'>未来24小时预报</view>
+      <view class="log_item" wx:for="{{data.hourly}}" wx:for-index="$index" wx:for-item="log">
+        <view class='time_row'>
+          <view class='time_text'>{{log.time}}</view>
+          <view class='time_text' style="justify-content:flex-end;margin-right:1rem;">
+            <image style="width:27.6px;height:24.4px;" src="{{'../icon/' + log.img + '.png'}}"></image>
+          </view>
+          <view class='time_text' style="justify-content:flex-start;">{{log.weather}}</view>
+          <view class='time_text'>{{log.temp}}°</view>
         </view>
-        <view class='aqi_info'>
-          {{log.detail}}
+      </view>
+
+      <view class='hourly_text'>生活指数</view>
+      <view class="log_item" wx:for="{{data.index}}" wx:for-item="log">
+        <view class='index_row'>
+          <view class='row_item'>
+            <view class='index_text'>
+              <image style="width:32px;height:32px;margin-top:-0.3rem;" src="{{index_icon[index]}}"></image>
+            </view>
+            <view class='index_text' style="justify-content:flex-start">{{log.iname}}</view>
+            <view class='index_text'>{{log.ivalue}}</view>
+          </view>
+          <view class='divider'>
+          </view>
+          <view class='aqi_info'>
+            {{log.detail}}
+          </view>
         </view>
       </view>
     </view>
-  </view>
 
+  </view>
 </view>
