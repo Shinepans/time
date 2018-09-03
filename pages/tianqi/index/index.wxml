@@ -31,7 +31,10 @@
     </view>
 
     <view class='bottom_content'>
-      <view class='hourly_text'>未来24小时预报</view>
+      <view class='hourly_text'>未来24小时温度</view>
+      <scroll-view scroll-x style="height: 5rem;padding-top:1rem">
+        <canvas class="canvas" canvas-id="lineGraph"></canvas>
+      </scroll-view>
       <view class="log_item" wx:for="{{data.hourly}}" wx:for-index="$index" wx:for-item="log">
         <view class='time_row'>
           <view class='time_text'>{{log.time}}</view>

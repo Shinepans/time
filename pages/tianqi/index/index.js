@@ -1,4 +1,6 @@
 // pages/tianqi/index/index.js
+const CHARTS = require('../../../utils/wxcharts.js')
+
 Page({
 
   /**
@@ -17,13 +19,14 @@ Page({
       '咸安区'
     ],
     index_icon: [
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/kongtiao.png', 
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/yundong.png', 
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/ziwaixian.png', 
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/ganmao.png', 
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/xiche.png', 
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/wuran.png', 
-      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/chuanyi.png']
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/kongtiao.png',
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/yundong.png',
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/ziwaixian.png',
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/ganmao.png',
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/xiche.png',
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/wuran.png',
+      'http://7xq5e8.com1.z0.glb.clouddn.com/beans/weather/chuanyi.png'
+    ]
   },
 
   /**
@@ -32,16 +35,21 @@ Page({
   onLoad: function(options) {
     const weather_city = wx.getStorageSync('weather_city') || ''
     if (weather_city !== '') {
-      this.setData({city: weather_city, display: 'index'})
+      this.setData({
+        city: weather_city,
+        display: 'index'
+      })
       this.getData(weather_city)
     }
   },
 
-  choseNewCity: function (options) {
-    this.setData({display: 'chose_city'})
+  choseNewCity: function(options) {
+    this.setData({
+      display: 'chose_city'
+    })
   },
 
-  getData: function (city) {
+  getData: function(city) {
     const reqUrl = 'https://jisutqybmf.market.alicloudapi.com/weather/query?city=' + `${city || this.data.funcs[this.data.index]}`
     const that = this
     wx.request({
@@ -52,7 +60,7 @@ Page({
         "Content-Type": "application/json; charset=utf-8",
         "Authorization": "APPCODE cdd16ea4905749b2ba2adeb6b9aea054"
       },
-      success: function (tq) {
+      success: function(tq) {
         wx.setStorageSync('tianqi_data', tq.result)
         console.log(tq.data)
         console.log(tq.data.result.city)
@@ -60,6 +68,8 @@ Page({
           display: 'index',
           data: tq.data.result,
           city: tq.data.result.city
+        }, () => {
+          that.oneDayCharts()
         })
       }
     })
@@ -79,7 +89,7 @@ Page({
 
   },
 
-  changeFunc: function (e) {
+  changeFunc: function(e) {
     this.setData({
       index: e.detail.value
     })
@@ -120,5 +130,36 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  oneDayCharts: function() {
+    const time = []
+    const temp = []
+    const weather = []
+    this.data.data.hourly.map((log) => {
+      time.push(log.time)
+      temp.push(log.temp)
+      weather.push(log.weather)
+    })
+    let line = {
+      canvasId: 'lineGraph',
+      type: 'line',
+      categories: time,
+      series: [{
+        name: ' ',
+        data: temp
+      }],
+      yAxis: {
+        min: 0
+      },
+      width: 800,
+      height: 200,
+      dataLabel: true,
+      legend: false,
+      extra: {
+        lineStyle: 'curve'
+      }
+    }
+    new CHARTS(line)
   }
 })
